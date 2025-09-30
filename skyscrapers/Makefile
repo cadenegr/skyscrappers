@@ -6,7 +6,7 @@
 #    By: cadenegr <neo_dgri@hotmail.com>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/14 14:55:14 by cadenegr          #+#    #+#              #
-#    Updated: 2024/03/13 22:31:37 by cadenegr         ###   ########.fr        #
+#    Updated: 2025/09/30 17:21:46 by cadenegr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,5 +54,28 @@ fclean: clean
 	make -C $(LIBFTDIR) fclean
 
 re: fclean all
+
+# Test targets
+test: all
+	@echo "Running comprehensive test suite..."
+	@./tests/run_all_tests.sh
+
+test-quick: all
+	@echo "Running quick test suite..."
+	@./tests/run_all_tests.sh --quick
+
+test-functional: all
+	@echo "Running functional tests..."
+	@./tests/run_tests.sh
+
+test-memory: all
+	@echo "Running memory tests..."
+	@./tests/run_memory_tests.sh
+
+test-performance: all
+	@echo "Running performance benchmarks..."
+	@./tests/run_benchmarks.sh
+
+.PHONY: all clean fclean re test test-quick test-functional test-memory test-performance
 
 

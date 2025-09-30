@@ -6,7 +6,7 @@
 /*   By: cadenegr <neo_dgri@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 14:24:42 by cadenegr          #+#    #+#             */
-/*   Updated: 2024/03/13 22:32:30 by cadenegr         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:00:02 by cadenegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	processed_argument(t_x *x, char *av)
 	int	j;
 
 	x->arg = ft_calloc(1, x->length);
-	x->sequence = ft_calloc (1, 4);
+	x->sequence = ft_calloc (1, 5);
 	i = 0;
 	j = 0;
 	while (i < x->length)

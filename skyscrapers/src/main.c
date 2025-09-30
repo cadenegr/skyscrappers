@@ -6,7 +6,7 @@
 /*   By: cadenegr <neo_dgri@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 22:52:10 by cadenegr          #+#    #+#             */
-/*   Updated: 2024/03/13 22:32:58 by cadenegr         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:09:25 by cadenegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	init(t_x *x)
 	x->dos = NULL;
 	x->tres = NULL;
 	x->cuatro = NULL;
+	x->poss_len = 0;
+	x->poss_result_len = 0;
 }
 
 int	main(int ac, char **av)
@@ -37,9 +39,12 @@ int	main(int ac, char **av)
 
 	init(&x);
 	if (!argument(ac, av[1], &x))
+	{
+		ft_free (&x);
 		return (EXIT_FAILURE);
+	}
 	build_possibilities (&x);
-	if (build_result(&x))
+	if (x.possibilities != NULL && build_result(&x))
 		print_result(&x);
 	else
 		ft_printf("Wrong argument parameters.\n");

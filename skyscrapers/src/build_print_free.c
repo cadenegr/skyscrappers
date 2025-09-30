@@ -6,7 +6,7 @@
 /*   By: cadenegr <neo_dgri@hotmail.com>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 12:15:28 by cadenegr          #+#    #+#             */
-/*   Updated: 2024/03/13 22:32:44 by cadenegr         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:59:09 by cadenegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 void	ft_free(t_x *x)
 {
-	free (x->arg);
-	free (x->sequence);
-	free (x->possibilities);
-	free (x->result);
+	if (x->arg)
+		free (x->arg);
+	if (x->sequence)
+		free (x->sequence);
+	if (x->possibilities)
+		free (x->possibilities);
+	if (x->result)
+		free (x->result);
 }
 
 bool	ft_check_if_correct(t_x *x)
